@@ -1,0 +1,106 @@
+### ==================== ALUNOS ====================
+
+# Listar todos os alunos
+GET http://127.0.0.1:5000/alunos
+Accept: application/json
+
+###
+
+# Criar um novo aluno
+POST http://127.0.0.1:5000/alunos
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "idade": 20,
+  "turma_id": 1,
+  "data_nascimento": "2003-05-15",
+  "nota_primeiro_semestre": 8.5,
+  "nota_segundo_semestre": 7.0,
+  "media_final": 7.75
+}
+
+###
+
+# Atualizar um aluno (id=1)
+PUT http://127.0.0.1:5000/alunos/1
+Content-Type: application/json
+
+{
+  "nome": "João Silva Atualizado",
+  "idade": 21
+}
+
+###
+
+# Deletar um aluno (id=1)
+DELETE http://127.0.0.1:5000/alunos/1
+
+### ==================== TURMAS ====================
+
+# Listar turmas
+GET http://127.0.0.1:5000/turmas
+Accept: application/json
+
+###
+
+# Criar turma
+POST http://127.0.0.1:5000/turmas
+Content-Type: application/json
+
+{
+  "descricao": "Turma A",
+  "ativo": true,
+  "professor_id": 1,
+  "alunos": [1,2]
+}
+
+###
+
+# Atualizar turma (id=1)
+PUT http://127.0.0.1:5000/turmas/1
+Content-Type: application/json
+
+{
+  "descricao": "Turma A Atualizada",
+  "ativo": false
+}
+
+###
+
+# Deletar turma (id=1)
+DELETE http://127.0.0.1:5000/turmas/1
+
+### ==================== PROFESSORES ====================
+
+# Listar professores
+GET http://127.0.0.1:5000/professores
+Accept: application/json
+
+###
+
+# Criar professor
+POST http://127.0.0.1:5000/professores
+Content-Type: application/json
+
+{
+  "nome": "Professor Carlos",
+  "idade": 40,
+  "materia": "Matemática",
+  "observacao": "Professor de Matemática"
+}
+###
+
+# Atualizar professor (id=1)
+PUT http://127.0.0.1:5000/professores/1
+Content-Type: application/json
+
+{
+  "nome": "Prof. Carlos Atualizado",
+  "idade": 41
+}
+
+###
+
+# Deletar professor (id=1)
+DELETE http://127.0.0.1:5000/professores/1
